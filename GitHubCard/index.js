@@ -82,6 +82,18 @@ function cardsProfile(string){
   info_card.classList.add('card-info')
 
 
+  card1.appendChild('info_card')
+  card1.appendChild('card_image')
+  info_card.appendChild('u_name')
+  info_card.appendChild('u_name2')
+  info_card.appendChild('bio')
+  info_card.appendChild('address')
+  info_card.appendChild('follower')
+  info_card.appendChild('following')
+  info_card.appendChild('git_profile')
+  info_card.appendChild('git_location')
+  
+
 
 }
 
