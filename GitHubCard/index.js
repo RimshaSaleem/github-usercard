@@ -60,6 +60,35 @@ const followersArray = [];
     bigknell
 */
 const result = document.querySelector('.cards');
+// creating function
+function cardsProfile(string){
+  const 
+  card1 = document.createElement('div');
+  card_image = document.createElement('img') 
+  info_card = document.createElement('div')
+  u_name = document.createElement('h3')
+  u_name2 = document.createElement('p')
+  bio = document.createElement('p')
+  address = document.createElement('a')
+  follower= document.createElement('p')
+  following = document.createElement('p')
+  git_location = document.createElement('p')
+  git_profile = document.createElement('p')
+
+
+  card1.classList.add('card')
+  u_name.classList.add('name')
+  u_name2.classList.add('username')
+  info_card.classList.add('card-info')
+
+
+
+}
+
+
+
+
+
 
 axios.get(`https://api.github.com/users/RimshaSaleem`)
 .then(response =>{
