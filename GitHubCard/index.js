@@ -1,3 +1,4 @@
+import axios from 'axios';
 /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
@@ -58,3 +59,4 @@ const followersArray = [];
     luishrd
     bigknell
 */
+const result = document.querySelector('.cards');
