@@ -66,3 +66,6 @@ axios.get(`https://api.github.com/users/RimshaSaleem`)
   console.log(response.data);
   
 })
+.catch(res =>{
+  console.log('Error no data' ,res)
+})
