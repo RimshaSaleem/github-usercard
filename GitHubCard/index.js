@@ -60,3 +60,9 @@ const followersArray = [];
     bigknell
 */
 const result = document.querySelector('.cards');
+
+axios.get(`https://api.github.com/users/RimshaSaleem`)
+.then(response =>{
+  console.log(response.data);
+  
+})
