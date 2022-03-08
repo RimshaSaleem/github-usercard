@@ -117,6 +117,7 @@ axios.get(`https://api.github.com/users/RimshaSaleem`)
     })
         .catch(res => console.log('no data found in system: ', res));
 
+    // axios.get(`https://api.github.com/users/RimshaSaleem/following`)
     axios.get(`https://api.github.com/users/RimshaSaleem/following`)
            .then(response =>{
             console.log(response.data);
@@ -132,3 +133,4 @@ axios.get(`https://api.github.com/users/RimshaSaleem`)
           console.log('no data in system: ', res)
 
         });
+        
