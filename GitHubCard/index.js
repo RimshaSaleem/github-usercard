@@ -1,3 +1,4 @@
+ import axios from 'axios';
 /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
@@ -50,6 +51,7 @@ const followersArray = [];
     </div>
 */
 
+
 /*
   List of LS Instructors Github username's:
     tetondan
@@ -58,3 +60,78 @@ const followersArray = [];
     luishrd
     bigknell
 */
+const main_profile = document.querySelector('.cards');
+
+
+function card_profile(string){
+
+  const
+      card1 = document.createElement('div'),
+      image_card = document.createElement('img'),
+      info_card = document.createElement('div'),
+      user_name= document.createElement('h3'),
+      usersUserName = document.createElement('p'),
+      location = document.createElement('p'),
+      profile = document.createElement('p'),
+      gitAddress = document.createElement('a'),
+      followers = document.createElement('p'),
+      following = document.createElement('p'),
+      bio = document.createElement('p');
+
+      
+
+      card1.classList.add('card');
+      info_card.classList.add('card-info');
+      user_name.classList.add('name');
+      usersUserName.classList.add('username');
+
+      
+      card1.appendChild(image_card);
+      card1.appendChild(info_card);
+      info_card.appendChild(user_name);
+      info_card.appendChild(usersUserName);
+      info_card.appendChild(location);
+      info_card.appendChild(profile);
+      profile.appendChild(gitAddress);
+      info_card.appendChild(followers);
+      info_card.appendChild(following);
+      info_card.appendChild(bio);
+
+
+      image_card.setAttribute('src', string.avatar_url );
+      user_name.textContent = `name: ${string.login}`;
+      location.textContent = `location: ${string.location}`;
+      followers.textContent = `followers: ${string.followers}`;
+      following.textContent = `following: ${string.following}`;
+      bio.textContent = `bio: ${string.bio}`;
+      gitAddress.textContent =`profile ${string.gitAddress}`
+
+      
+      return card1;
+}
+
+
+axios.get(`https://api.github.com/users/RimshaSaleem`)
+           .then(response =>{
+            console.log(response.data);
+            main_profile.appendChild(card_profile(response.data));
+    })
+        .catch(res => console.log('no data found in system: ', res));
+
+    // axios.get(`https://api.github.com/users/RimshaSaleem/following`)
+    axios.get(`https://api.github.com/users/RimshaSaleem/following`)
+           .then(response =>{
+            console.log(response.data);
+            response.data.forEach(login => {
+              
+              const result = card_profile(login);
+              main_profile.appendChild(result);
+            });
+            
+          })
+
+        .catch(res => {
+          console.log('no data in system: ', res)
+
+        });
+    
